@@ -74,6 +74,12 @@ const Navbar = () => {
                             <BiChevronDown size={16} />
                         </div>
 
+                        {user && user.role === 'admin' && (
+                            <Link to="/admin" className="hidden md:block bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white px-4 py-2 rounded-lg font-bold text-sm shadow-neon-red transition-all transform hover:scale-105 mr-2">
+                                Admin Dashboard
+                            </Link>
+                        )}
+
                         {user ? (
                             <div className="relative group">
                                 <Link to="/profile" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
@@ -85,6 +91,9 @@ const Navbar = () => {
                                 {/* Dropdown */}
                                 <div className="absolute right-0 mt-2 w-48 bg-secondary-900 border border-secondary-800 rounded-lg shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right">
                                     <Link to="/profile" className="block px-4 py-2 text-sm text-secondary-300 hover:text-white hover:bg-secondary-800">Profile</Link>
+                                    {user.role === 'admin' && (
+                                        <Link to="/admin" className="block px-4 py-2 text-sm text-primary-400 hover:text-white hover:bg-secondary-800 font-bold">Admin Dashboard</Link>
+                                    )}
                                     <Link to="/my-bookings" className="block px-4 py-2 text-sm text-secondary-300 hover:text-white hover:bg-secondary-800">My Bookings</Link>
                                     <div className="h-px bg-secondary-800 my-1"></div>
                                     <button onClick={logout} className="block w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-secondary-800">Sign Out</button>
@@ -127,13 +136,13 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden absolute top-20 left-0 w-full bg-secondary-950 border-b border-secondary-800 p-4 shadow-xl animate-slide-up">
-                    <div className="space-y-4">
+                <div className="md:hidden absolute top-20 left-0 w-full bg-secondary-950/95 backdrop-blur-xl border-b border-secondary-800 p-6 shadow-2xl animate-slide-up z-40">
+                    <div className="flex flex-col gap-4">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 to={link.path}
-                                className="block text-secondary-300 hover:text-white py-2"
+                                className="text-secondary-300 hover:text-white hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-medium text-lg"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}

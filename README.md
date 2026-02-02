@@ -28,7 +28,10 @@
 ### 🔐 Advanced Security & Tech
 - **JWT Authentication**: Robust session management with secure Login/Signup.
 - **AI-Powered Assistance**: Integrated AI Chatbot for user support (simulated).
-- **Role-Based Access**: Admin dashboard capabilities for managing platform content.
+- **Role-Based Access**: robust Admin Dashboard for:
+    -   **Event Management**: Create, Edit, Delete events dynamically.
+    -   **User Oversight**: View and manage registered users.
+    -   **Booking Tracking**: Real-time view of all bookings and revenue.
 
 ---
 
@@ -72,6 +75,15 @@ Seed the Database (Optional but Recommended):
 ```bash
 # Populates the DB with Movies, Plays, Sports, and Stream events
 node seeder.js
+
+# Populates the DB with Dummy Users (Recommended for Admin Dashboard demo)
+node seed-dummy-users.js
+```
+
+### 🔐 Default Admin Credentials
+- **Email**: `admin@eventify.com`
+- **Password**: `admin123`
+- **Role**: Full access to Admin Dashboard (Manage Events, Users, Bookings)
 ```
 
 Start the Backend Server:

@@ -4,30 +4,27 @@ const Event = require('./models/Event');
 
 dotenv.config();
 
-const checkEvent = async () => {
+const checkEvents = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
         console.log('MongoDB Connected');
 
-        // ID from the user screenshot URL
-        const eventId = '69752d780e03c2d7363acb6e';
-
-        const event = await Event.findById(eventId);
-        if (!event) {
-            console.log('Event NOT found!');
-        } else {
-            console.log('Event found:', event.title);
-            console.log('Available Seats (Root):', event.availableSeats);
-            console.log('Total Seats (Root):', event.totalSeats);
-            console.log('Ticket Categories:', JSON.stringify(event.ticketCategories, null, 2));
-            console.log('Booked Seats:', event.bookedSeats);
-        }
+        const events = await Event.find({}).limit(3);
+        console.log('--- Checking first 3 events ---');
+        events.forEach(e => {
+            console.log(`Title: ${e.title}`);
+            console.log(`ID: ${e._id}`);
+            console.log(`Total Seats: ${e.totalSeats} (Type: ${typeof e.totalSeats})`);
+            console.log(`Available Seats: ${e.availableSeats} (Type: ${typeof e.availableSeats})`);
+            console.log(`Ticket Categories:`, e.ticketCategories);
+            console.log('---------------------------');
+        });
 
         process.exit();
     } catch (error) {
-        console.error('Error:', error);
+        console.error(error);
         process.exit(1);
     }
 };
 
-checkEvent();
+checkEvents();

@@ -5,9 +5,11 @@ const bookingService = require('../services/booking.service');
 // @access  Private
 const createBooking = async (req, res, next) => {
     try {
-        console.log('Booking Request Body:', req.body);
-        console.log('Booking Request User:', req.user.id);
-        const booking = await bookingService.createBooking(req.user.id, req.body);
+        if (!req.user) {
+            res.status(401);
+            throw new Error('User not authenticated');
+        }
+        const booking = await bookingService.createBooking(req.user.id || req.user._id, req.body);
         res.status(201).json(booking);
     } catch (error) {
         console.error('Booking Controller Error:', error.message);

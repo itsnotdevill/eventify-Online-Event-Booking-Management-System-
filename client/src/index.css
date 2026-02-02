@@ -51,6 +51,10 @@
   .glass-panel {
     @apply bg-secondary-900/70 backdrop-blur-lg border border-white/5 rounded-2xl;
   }
+
+  .shadow-neon-red {
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.5), 0 0 20px rgba(220, 38, 38, 0.3);
+  }
 }
 
 .text-gradient {

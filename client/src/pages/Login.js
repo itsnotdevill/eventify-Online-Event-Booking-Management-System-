@@ -21,8 +21,12 @@ const Login = () => {
         setError(null);
         setIsLoading(true);
         try {
-            await login(email, password);
-            navigate('/');
+            const userData = await login(email, password);
+            if (userData.role === 'admin') {
+                navigate('/admin');
+            } else {
+                navigate('/');
+            }
         } catch (err) {
             setError(err.response?.data?.msg || 'Invalid credentials');
         } finally {
