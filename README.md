@@ -107,13 +107,37 @@ The application will launch at `http://localhost:3000`.
 
 ---
 
-## 📸 Usage Highlights
+---
 
-1.  **Explore**: Browse the "Stream" tab for online events or "Movies" for the latest blockbusters.
-2.  **Filter**: Use the intelligent filter sidebar to sort by genre, language, or price.
-3.  **Book**: Select the "Wimbledon Live Screening" event -> Choose VIP seats -> Checkout.
-4.  **Profile**: Visit "My Profile" to see your dashboard and "My Bookings" for your tickets.
-5.  **Gifts**: Navigate to "Gift Cards" to send a personalized e-card to a friend.
+## 📸 Project Screenshots
+
+### 🏠 Home & Discovery
+| **Home Page** | **Movies Section** |
+|:---:|:---:|
+| ![Home Page](screenshots/Main%20Screen%2001.png) | ![Movies](screenshots/Movies%20section.png) |
+
+| **Events** | **Sports** |
+|:---:|:---:|
+| ![Events](screenshots/Events%20section.png) | ![Sports](screenshots/Sports%20section.png) |
+
+### 🎟️ Booking Flow
+| **Event Details** | **Seat Selection** |
+|:---:|:---:|
+| ![Event Details](screenshots/Event%20Detail%20Interface.png) | ![Seat Selection](screenshots/Event%20slot%20selection.png) |
+
+| **Payment** | **Digital Ticket** |
+|:---:|:---:|
+| ![Payment](screenshots/Payment%20&%20Confirmation%20(CARD)%2001.png) | ![Ticket](screenshots/Digital%20Tickets%20.png) |
+
+### 👤 User Experience
+| **Sign In** | **User Profile** |
+|:---:|:---:|
+| ![Sign In](screenshots/Sign%20In%20Page.png) | ![Profile](screenshots/My%20Profile.png) |
+
+### 🤖 AI & Features
+| **Eva AI Chatbot** | **Offers** |
+|:---:|:---:|
+| ![Eva AI](screenshots/Eva%20AI%20Chatbot.png) | ![Offers](screenshots/Offers%20section.png) |
 
 ---
 
